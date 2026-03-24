@@ -1,0 +1,8 @@
+/Users/elfi/Library/Java/JavaVirtualMachines/temurin-25.0.2/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=62120 -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/elfi/IdeaProjects/practice2/out/production/practice2 part3.part3_2.GradeJournal
+=== Журнал оценок ===
+Алиса   | Оценок: 5 | Средний: 4.40 | Мин: 3 | Макс: 5
+Борис   | Оценок: 3 | Средний: 3.33 | Мин: 3 | Макс: 4
+Вера    | Оценок: 6 | Средний: 4.83 | Мин: 4 | Макс: 5
+Глеб    | Оценок: 4 | Средний: 4.00 | Мин: 3 | Макс: 5
+
+Лучший студент: Вера (средний балл: 4.83)

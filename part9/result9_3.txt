@@ -1,0 +1,26 @@
+jshell> enum Color { RED, GREEN, BLUE, YELLOW, CYAN, MAGENTA, WHITE, BLACK }
+|  created enum Color
+
+jshell> var enumSet = java.util.EnumSet.of(Color.RED, Color.GREEN, Color.BLUE)
+enumSet ==> [RED, GREEN, BLUE]
+
+jshell> var hashSet = new java.util.HashSet<>(java.util.Set.of(Color.RED, Color.GREEN, Color.BLUE))
+hashSet ==> [RED, GREEN, BLUE]
+
+jshell> enumSet.contains(Color.RED)
+$17 ==> true
+
+jshell> hashSet.contains(Color.RED)
+$19 ==> true
+
+jshell> enumSet.getClass().getSimpleName()
+$20 ==> "RegularEnumSet"
+
+jshell> hashSet.getClass().getSimpleName()
+$21 ==> "HashSet"
+
+Название связано с тем, как EnumSet хранит данные внутри памяти.
+В отличие от HashSet, который использует хеш-таблицу и сложные вычисления,
+EnumSet использует битовые векторы (массивы битов).
+Если количество констант в перечислении превысит 64,
+Java автоматически переключит реализацию с RegularEnumSet на JumboEnumSet.

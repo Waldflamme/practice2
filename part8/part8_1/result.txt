@@ -1,0 +1,25 @@
+/Users/elfi/Library/Java/JavaVirtualMachines/temurin-25.0.2/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=49220 -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/elfi/IdeaProjects/practice2/out/production/practice2 part8.part8_1.LibrarySystem
+=== Каталог ===
+--- КАТАЛОГ БИБЛИОТЕКИ ---
+[Полка A-12] Война и мир — Толстой | На полке A-12
+[Полка H-3] История России — Соловьёв | На полке H-3
+[PDF, 5.2 МБ] Clean Code — Мартин | Скачать (PDF)
+[EPUB, 3.1 МБ] Effective Java — Блох | Скачать (EPUB)
+[Полка S-7] Краткая история времени — Хокинг | На полке S-7
+[PDF, 1.0 МБ] Искусство войны — Сунь-цзы | Скачать (PDF)
+[Полка A-5] Преступление и наказание — Достоевский | На полке A-5
+[MOBI, 8.0 МБ] Sapiens — Харари | Скачать (MOBI)
+
+=== По жанрам ===
+Художественная литература: 2 элемент(ов)
+Научная литература: 1 элемент(ов)
+История: 2 элемент(ов)
+Программирование: 2 элемент(ов)
+Искусство: 1 элемент(ов)
+
+Общая стоимость: 8850.00 руб.
+Самая дорогая: Book[title=Effective Java, author=Блох, year=2018, genre=PROGRAMMING, price=2200.0]
+
+Авторы программирования: [Блох, Мартин]
+
+Process finished with exit code 0

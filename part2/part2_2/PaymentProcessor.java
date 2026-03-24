@@ -31,7 +31,14 @@ public class PaymentProcessor {
      */
     public static void describe(PaymentMethod pm) {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+        switch (pm) {
+            case CreditCard cc ->
+                    System.out.println("  Детали: Карта " + cc.cardNumber() + ", Владелец: " + cc.holder());
+            case BankTransfer bt ->
+                    System.out.println("  Детали: Банк " + bt.bankName() + ", IBAN: " + bt.iban());
+            case CryptoWallet cw ->
+                    System.out.println("  Детали: Валюта " + cw.currency() + ", Адрес: " + cw.address());
+        }
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 }

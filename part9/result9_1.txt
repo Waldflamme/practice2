@@ -1,0 +1,16 @@
+jshell> sealed interface Shape permits Circle, Square {}
+|  created interface Shape, however, it cannot be referenced until class Circle, and class Square are declared
+
+jshell> record Circle(double r) implements Shape {}
+|  created record Circle, however, it cannot be referenced until class Shape is declared
+
+jshell> record Square(double side) implements Shape {}
+|  created record Square
+
+jshell> Shape s = new Circle(5)
+s ==> Circle[r=5.0]
+
+jshell> s instanceof Circle c ? "Круг r=" + c.r() : "Не круг"
+$5 ==> "Круг r=5.0"
+
+Выдаст ошибку т.к. класс Traingle не внесен в список разрешений интерфейса

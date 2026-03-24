@@ -36,63 +36,64 @@ public class BankAccount {
     private static String bankName;
 
     static {
-        // TODO: bankName = "Java Bank"; выведите "Банковская система инициализирована"
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // Устанавливаем название банка и выводим сообщение о готовности системы
+        bankName = "Java Bank";
+        System.out.println("Банковская система инициализирована");
     }
 
     {
-        // TODO: totalAccounts++; выведите "Создание счёта #" + totalAccounts
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        // Увеличиваем счетчик при создании каждого нового объекта (до конструктора)
+        totalAccounts++;
+        System.out.println("Создание счёта #" + totalAccounts);
     }
 
     /**
-     * Подсказка: к моменту конструктора блок экземпляра уже увеличил totalAccounts.
-     * accountNumber = "ACC-" + totalAccounts
+     * Конструктор инициализирует владельца, баланс и присваивает номер счета.
      */
     public BankAccount(String owner, double initialBalance) {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        this.owner = owner;
+        this.balance = initialBalance;
+        // К этому моменту блок инициализации уже увеличил totalAccounts
+        this.accountNumber = "ACC-" + totalAccounts;
     }
 
     /**
-     * Если amount <= 0 — сообщение об ошибке и выход без изменения баланса.
+     * Пополнение счета. Проверяет, чтобы сумма была положительной.
      */
     public void deposit(double amount) {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        if (amount <= 0) {
+            System.out.println("Ошибка: сумма должна быть положительной");
+        } else {
+            balance += amount;
+        }
     }
 
     /**
-     * Если amount <= 0 или balance < amount — соответствующее сообщение, без снятия.
-     * Иначе уменьшите balance.
+     * Снятие средств. Проверяет корректность суммы и наличие средств.
      */
     public void withdraw(double amount) {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
-    }
-
-    public static int getTotalAccounts() {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: верните totalAccounts
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        if (amount <= 0) {
+            System.out.println("Ошибка: сумма должна быть положительной");
+        } else if (balance < amount) {
+            System.out.println("Ошибка: недостаточно средств");
+        } else {
+            balance -= amount;
+        }
     }
 
     /**
-     * Формат: "[ACC-1] Алиса: 1500.00 руб."
-     * Подсказка: String.format("[%s] %s: %.2f руб.", accountNumber, owner, balance)
+     * Возвращает общее количество созданных счетов.
+     */
+    public static int getTotalAccounts() {
+        return totalAccounts;
+    }
+
+    /**
+     * Форматированный вывод данных о счете.
      */
     @Override
     public String toString() {
-        // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return ""; // TODO: реализуйте формат выше
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        return String.format("[%s] %s: %.2f руб.", accountNumber, owner, balance);
     }
 
     public static void main(String[] args) {
@@ -108,9 +109,9 @@ public class BankAccount {
         a1.withdraw(200);
         System.out.println("После снятия: " + a1);
 
-        a1.withdraw(5000);
+        a1.withdraw(5000); // Ошибка: недостаточно средств
 
-        a2.deposit(-100);
+        a2.deposit(-100);  // Ошибка: сумма должна быть положительной
 
         System.out.println("Всего счетов: " + BankAccount.getTotalAccounts());
     }

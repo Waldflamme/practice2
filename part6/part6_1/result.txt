@@ -1,0 +1,10 @@
+/Users/elfi/Library/Java/JavaVirtualMachines/temurin-25.0.2/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=64787 -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/elfi/IdeaProjects/practice2/out/production/practice2 part6.part6_1.ValidationFramework
+=== Валидация корректной формы ===
+Все поля валидны!
+
+=== Валидация некорректной формы ===
+  - Имя обязательно
+  - Поле не может быть пустым
+  - Возраст должен быть от 18 до 120
+
+Process finished with exit code 0

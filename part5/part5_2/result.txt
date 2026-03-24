@@ -1,0 +1,9 @@
+/Users/elfi/Library/Java/JavaVirtualMachines/temurin-25.0.2/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=64310 -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/elfi/IdeaProjects/practice2/out/production/practice2 part5.part5_2.RecordEnumDemo
+36.60 °C
+97.88 °F
+309.75 K
+
+ADD(10.0000, 3.00000) = 13.0000
+SUBTRACT(10.0000, 3.00000) = 7.00000
+MULTIPLY(10.0000, 3.00000) = 30.0000
+DIVIDE(10.0000, 3.00000) = 3.33333

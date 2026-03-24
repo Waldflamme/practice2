@@ -1,0 +1,12 @@
+/Users/elfi/Library/Java/JavaVirtualMachines/temurin-25.0.2/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=59250 -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath /Users/elfi/IdeaProjects/practice2/out/production/practice2 part2.part2_2.PaymentDemo
+Оплата картой *4444: 10000.0 руб.
+  Комиссия: 200.00 руб.
+  Детали: Карта 4111222233334444, Владелец: Иван Петров
+
+Перевод через Сбербанк: 10000.0 руб.
+  Комиссия: 50.00 руб.
+  Детали: Банк Сбербанк, IBAN: RU1234567890
+
+Криптоплатёж (BTC): 10000.0 руб.
+  Комиссия: 150.00 руб.
+  Детали: Валюта BTC, Адрес: 0xABC123

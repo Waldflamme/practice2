@@ -40,34 +40,40 @@ public class StringPoolLab {
 
         System.out.println("=== Сравнение строк ===\n");
 
-        // Прогноз: ____ (true/false). Причина: ____
+        // Прогноз: true. Причина: Оба литерала указывают на один и тот же объект в String Pool.
         System.out.println("s1 == s2      : " + (s1 == s2));
+        // Прогноз: true.
         System.out.println("s1.equals(s2) : " + s1.equals(s2));
         System.out.println();
 
         // TODO: запишите свой прогноз ПЕРЕД запуском
-        // Прогноз: ____ (true/false). Причина: ____
+        // Прогноз: false (true/false). Причина: s1 в пуле, s3 создан через new в обычной области памяти (Heap). Ссылки разные.
         System.out.println("s1 == s3      : " + (s1 == s3));
+        // Прогноз: true. Причина: Значения объектов равны
         System.out.println("s1.equals(s3) : " + s1.equals(s3));
         System.out.println();
 
-        // Прогноз: ____ (true/false). Причина: ____
+        // Прогноз: false (true/false). Причина: Создается два разных новых объекта
         System.out.println("s3 == s4      : " + (s3 == s4));
+        // Прогноз: true (true/false). Причина: Значения объектов одинаковые
         System.out.println("s3.equals(s4) : " + s3.equals(s4));
         System.out.println();
 
-        // Прогноз: ____ (true/false). Причина: ____
+        // Прогноз: true (true/false). Причина: intern() возвращает ссылку на строку из пула. s1 уже там.
         System.out.println("s1 == s5      : " + (s1 == s5));
+        // Прогноз: true (true/false). Причина: Значения равны.
         System.out.println("s1.equals(s5) : " + s1.equals(s5));
         System.out.println();
 
-        // Прогноз: ____ (true/false). Причина: ____
+        // Прогноз: true (true/false). Причина: Склейка литералов происходит на этапе компиляции
         System.out.println("s1 == s6      : " + (s1 == s6));
+        // Прогноз: true (true/false).
         System.out.println("s1.equals(s6) : " + s1.equals(s6));
         System.out.println();
 
-        // Прогноз: ____ (true/false). Причина: ____
+        // Прогноз: false (true/false). Причина: Причина: Склейка с переменной создает новый объект String в процессе выполнения программы.
         System.out.println("s1 == s7      : " + (s1 == s7));
+        // Прогноз: false (true/false).
         System.out.println("s1.equals(s7) : " + s1.equals(s7));
         System.out.println();
 
@@ -78,8 +84,9 @@ public class StringPoolLab {
         sb.append('H').append('e').append('l').append('l').append('o');
         String s8 = sb.toString();
 
-        // Прогноз: ____ (true/false). Причина: ____
+        // Прогноз: false (true/false). Причина: sb.toString() всегда создает новый объект в куче.
         System.out.println("s1 == s8      : " + (s1 == s8));
+        // Прогноз: false (true/false).
         System.out.println("s1.equals(s8) : " + s1.equals(s8));
     }
 }

@@ -46,7 +46,7 @@ public class LibrarySystem {
         /** Возвращает русское название жанра. */
         public String getRussianName() {
             // ▼ ВАШ КОД ЗДЕСЬ ▼
-return "";
+            return russianName;
 
             // ▲ КОНЕЦ ВАШЕГО КОДА ▲
         }
@@ -165,7 +165,15 @@ return "";
          */
         public void printCatalog() {
             // ▼ ВАШ КОД ЗДЕСЬ ▼
-
+            System.out.println("--- КАТАЛОГ БИБЛИОТЕКИ ---");
+            for (LibraryItem item : items) {
+                // Использование Pattern Matching switch (Java 17/21+)
+                String typeInfo = switch (item) {
+                    case PhysicalBook p -> "На полке " + p.shelf();
+                    case EBook e -> "Скачать (" + e.format() + ")";
+                };
+                System.out.println(item.getInfo() + " | " + typeInfo);
+            }
             // ▲ КОНЕЦ ВАШЕГО КОДА ▲
         }
 
@@ -192,8 +200,9 @@ return "";
          */
         public double totalValue() {
             // ▼ ВАШ КОД ЗДЕСЬ ▼
-return 0.0;
-            // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+            return items.stream()
+                    .map(item -> item.book().price())
+                    .reduce(0.0, Double::sum);            // ▲ КОНЕЦ ВАШЕГО КОДА ▲
         }
 
         /**
@@ -204,7 +213,7 @@ return 0.0;
          */
         public Optional<Book> mostExpensive() {
             // ▼ ВАШ КОД ЗДЕСЬ ▼
-return null;
+            return items.stream().map(LibraryItem::book).max(Comparator.comparingDouble(Book::price));
            // ▲ КОНЕЦ ВАШЕГО КОДА ▲
         }
 

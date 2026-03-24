@@ -1,0 +1,24 @@
+jshell> import java.util.function.*
+
+jshell> Function<String, String> trim = String::trim
+trim ==> $Lambda/0x00001c000104a000@41cf53f9
+
+jshell> Function<String, String> upper = String::toUpperCase
+upper ==> $Lambda/0x00001c000104a458@306a30c7
+
+jshell> Function<String, String> exclaim = s -> s + "!"
+exclaim ==> $Lambda/0x00001c000104a8b0@27fa135a
+
+jshell> var pipeline1 = trim.andThen(upper).andThen(exclaim)
+pipeline1 ==> java.util.function.Function$$Lambda/0x00001c000101ab58@5ce65a89
+
+jshell> var pipeline2 = exclaim.compose(upper).compose(trim)
+pipeline2 ==> java.util.function.Function$$Lambda/0x00001c000101ada8@3eb07fd3
+
+jshell> pipeline1.apply("  hello world  ")
+$12 ==> "HELLO WORLD!"
+
+jshell> pipeline2.apply("  hello world  ")
+$13 ==> "HELLO WORLD!"
+
+В данном случае результат совпадает, но если бы мы подавали функции в одинаковом порядке, результат различался бы.

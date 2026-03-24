@@ -1,5 +1,8 @@
 package part3.part3_2;
 
+import java.util.Arrays;
+import java.util.OptionalInt;
+
 /**
  * Задание 3.2 — Зубчатый массив: журнал оценок
  *
@@ -41,7 +44,8 @@ public class GradeJournal {
      */
     public static double average(int[] grades) {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: просуммируйте все элементы, разделите на (double) grades.length
+        int length = grades.length;
+        return Arrays.stream(grades).sum() / (double) length; // TODO: просуммируйте все элементы, разделите на (double) grades.length
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -53,7 +57,13 @@ public class GradeJournal {
      */
     public static int max(int[] grades) {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: начните с grades[0], пройдите циклом, обновляйте максимум
+        int maxGrade = grades[0];
+        for (int grade : grades) {
+            if (grade > maxGrade) {
+                maxGrade = grade;
+            }
+        }
+        return maxGrade; // TODO: начните с grades[0], пройдите циклом, обновляйте максимум
         // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
@@ -65,8 +75,13 @@ public class GradeJournal {
      */
     public static int min(int[] grades) {
         // ▼ ВАШ КОД ЗДЕСЬ ▼
-        return 0; // TODO: начните с grades[0], пройдите циклом, обновляйте минимум
-        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
+        int minGrade = grades[0];
+        for (int grade : grades) {
+            if (grade < minGrade) {
+                minGrade = grade;
+            }
+        }
+        return minGrade;        // ▲ КОНЕЦ ВАШЕГО КОДА ▲
     }
 
     // === Метод main ===
